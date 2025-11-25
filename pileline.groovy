@@ -18,6 +18,14 @@ pipeline {
                    }   
             }
         }
+         stage('Quality-gate') {
+            steps {
+                timeout(10) {
+    
+            }
+                waitForQualityGate true
+            }
+        }
         stage('deploy') {
             steps {
                 echo "deploy sucess"
